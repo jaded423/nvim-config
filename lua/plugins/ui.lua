@@ -15,7 +15,7 @@ return {
         },
       },
       presets = {
-        bottom_search = true,
+        bottom_search = false,
         command_palette = true,
         long_message_to_split = true,
         inc_rename = false,
@@ -91,7 +91,7 @@ return {
           enabled = true,
           sections = {
             { section = "header" },
-            { section = "keys", gap = 1, padding = 1 },
+            { section = "keys",   gap = 1, padding = 1 },
             { section = "startup" },
             {
               section = "terminal",
@@ -104,24 +104,32 @@ return {
           },
           preset = {
             header = [[
-     ██╗ █████╗ ██████╗ ███████╗██████╗ 
+     ██╗ █████╗ ██████╗ ███████╗██████╗
      ██║██╔══██╗██╔══██╗██╔════╝██╔══██╗
      ██║███████║██║  ██║█████╗  ██║  ██║
 ██   ██║██╔══██║██║  ██║██╔══╝  ██║  ██║
 ╚█████╔╝██║  ██║██████╔╝███████╗██████╔╝
- ╚════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═════╝ 
+ ╚════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═════╝
     🐍 Strike fast. Code faster! 🐍
             ]],
             keys = {
-              { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
-              { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-              { icon = " ", key = "g", desc = "Find Text", action = ":Telescope live_grep" },
-              { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
-              { icon = " ", key = "c", desc = "Config", action = ":Telescope find_files cwd=" .. vim.fn.stdpath("config") },
-              { icon = " ", key = "d", desc = "Database UI", action = ":DBUI" },
-              { icon = " ", key = "L", desc = "Lazy Plugin Manager", action = ":Lazy" },
-              { icon = " ", key = "M", desc = "Mason LSP Manager", action = ":Mason" },
-              { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+              { icon = " ", key = "f", desc = "Find File",    action = function() vim.cmd("Telescope find_files") end },
+              { icon = " ", key = "n", desc = "New File",     action = function() vim.cmd("ene | startinsert") end },
+              { icon = " ", key = "g", desc = "Find Text",    action = function() vim.cmd("Telescope live_grep") end },
+              { icon = " ", key = "r", desc = "Recent Files", action = function() vim.cmd("Telescope oldfiles") end },
+              {
+                icon = " ",
+                key = "c",
+                desc = "Config",
+                action = function()
+                  vim.cmd(
+                    "Telescope find_files cwd=" .. vim.fn.stdpath("config"))
+                end
+              },
+              { icon = " ", key = "d", desc = "Database UI",         action = function() vim.cmd("DBUI") end },
+              { icon = " ", key = "L", desc = "Lazy Plugin Manager", action = function() vim.cmd("Lazy") end },
+              { icon = " ", key = "M", desc = "Mason LSP Manager",   action = function() vim.cmd("Mason") end },
+              { icon = " ", key = "q", desc = "Quit",                action = function() vim.cmd("qa") end },
             },
           },
         },
@@ -141,12 +149,12 @@ return {
           globalstatus = true,
         },
         sections = {
-          lualine_a = {"mode"},
-          lualine_b = {"branch", "diff", "diagnostics"},
-          lualine_c = {"filename"},
-          lualine_x = {"encoding", "fileformat", "filetype"},
-          lualine_y = {"progress"},
-          lualine_z = {"location"}
+          lualine_a = { "mode" },
+          lualine_b = { "branch", "diff", "diagnostics" },
+          lualine_c = { "filename" },
+          lualine_x = { "encoding", "fileformat", "filetype" },
+          lualine_y = { "progress" },
+          lualine_z = { "location" }
         },
       })
     end,

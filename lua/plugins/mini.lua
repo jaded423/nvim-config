@@ -65,7 +65,23 @@ return {
       options = {
         use_as_default_explorer = false,
       },
+      mappings = {
+        close = 'q',
+        go_in = '<CR>',
+        go_in_plus = 'L',
+        go_out = '-',
+        go_out_plus = 'H',
+        reset = '<BS>',
+        reveal_cwd = '@',
+        show_help = 'g?',
+        synchronize = '=',
+        trim_left = '<',
+        trim_right = '>',
+      },
     },
+    config = function(_, opts)
+      require("mini.files").setup(opts)
+    end,
   },
 
   -- Jump to any location (hop/leap alternative)
@@ -74,7 +90,7 @@ return {
     event = "VeryLazy",
     opts = {
       mappings = {
-        start_jumping = "<CR>",
+        start_jumping = "<leader>j", -- Changed from "<CR>" to avoid conflict
       },
     },
   },
