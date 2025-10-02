@@ -14,12 +14,12 @@ return {
   {
     "numToStr/Comment.nvim",
     keys = {
-      { "gcc", mode = "n", desc = "Comment toggle current line" },
-      { "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
-      { "gc", mode = "x", desc = "Comment toggle linewise ^(visual^)" },
-      { "gbc", mode = "n", desc = "Comment toggle current block" },
-      { "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
-      { "gb", mode = "x", desc = "Comment toggle blockwise ^(visual^)" },
+      { "gcc", mode = "n",          desc = "Comment toggle current line" },
+      { "gc",  mode = { "n", "o" }, desc = "Comment toggle linewise" },
+      { "gc",  mode = "x",          desc = "Comment toggle linewise ^(visual^)" },
+      { "gbc", mode = "n",          desc = "Comment toggle current block" },
+      { "gb",  mode = { "n", "o" }, desc = "Comment toggle blockwise" },
+      { "gb",  mode = "x",          desc = "Comment toggle blockwise ^(visual^)" },
     },
     config = function()
       require("Comment").setup()
@@ -48,11 +48,11 @@ return {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-      { "-", "<cmd>Oil<CR>", desc = "Open parent directory" },
+      { "-",         "<cmd>Oil<CR>",         desc = "Open parent directory" },
       { "<leader>-", "<cmd>Oil --float<CR>", desc = "Open parent directory (float)" },
     },
     opts = {
-      default_file_explorer = true,
+      default_file_explorer = false,
       delete_to_trash = true,
       skip_confirm_for_simple_edits = true,
       view_options = {
