@@ -62,7 +62,9 @@ return {
 					{ section = "startup" },
 					{
 						section = "terminal",
-						cmd = "ascii-image-converter " .. vim.fn.stdpath("config") .. "/lua/plugins/snek.png -C -c",
+						cmd = "ascii-image-converter "
+							.. vim.fn.stdpath("config")
+							.. "/lua/plugins/snek.png -C -c -W 55",
 						random = 10,
 						pane = 2,
 						indent = 4,
