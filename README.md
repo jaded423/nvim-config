@@ -446,5 +446,3 @@ MIT License - See LICENSE file for details
 ---
 
 **Enjoy your modern Neovim setup!** 🚀
-
-# testing nvimbackup funchtion
