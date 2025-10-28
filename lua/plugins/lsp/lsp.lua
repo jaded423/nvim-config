@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/cmp-nvim-lsp",
 	},
 	lazy = false,
 	priority = 50,
@@ -25,8 +24,8 @@ return {
 			},
 		})
 
-		-- Get default capabilities from cmp_nvim_lsp
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		-- Get capabilities from blink.cmp
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		-- Use the new vim.lsp.config API instead of lspconfig
 		local servers = {

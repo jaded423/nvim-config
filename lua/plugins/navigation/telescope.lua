@@ -38,6 +38,7 @@ return {
 						"f",
 						"--hidden",
 						"--follow",
+						-- fd will automatically use ~/.fdignore
 					},
 				},
 			},
