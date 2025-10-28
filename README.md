@@ -30,10 +30,12 @@ A modern, feature-rich Neovim configuration built with Lua, optimized for web de
 ## 📦 Plugin List
 
 ### **Core**
+
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Modern plugin manager
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Lua utilities
 
 ### **LSP & Completion**
+
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - LSP client configuration
 - [mason.nvim](https://github.com/williamboman/mason.nvim) - Package manager for LSP/DAP/linters
 - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) - Bridge between mason and lspconfig
@@ -45,34 +47,41 @@ A modern, feature-rich Neovim configuration built with Lua, optimized for web de
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Snippet collection
 
 ### **Syntax & Highlighting**
+
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Tree-sitter integration
 - [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) - Textobject definitions
 
 ### **File Navigation**
+
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy finder
 - [oil.nvim](https://github.com/stevearc/oil.nvim) - Edit filesystem like a buffer
 - [mini.files](https://github.com/echasnovski/mini.files) - Column-based file manager
 
 ### **Git**
+
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git decorations and hunk operations
 - [snacks.nvim (lazygit)](https://github.com/folke/snacks.nvim) - Lazygit integration
 - [snacks.nvim (gitbrowse)](https://github.com/folke/snacks.nvim) - Open files in GitHub/GitLab
 
 ### **Code Quality**
+
 - [conform.nvim](https://github.com/stevearc/conform.nvim) - Code formatting
 - [nvim-lint](https://github.com/mfussenegger/nvim-lint) - Asynchronous linting
 
 ### **Code Navigation & Diagnostics**
+
 - [trouble.nvim](https://github.com/folke/trouble.nvim) - Beautiful diagnostics list
 - [aerial.nvim](https://github.com/stevearc/aerial.nvim) - Code outline sidebar
 
 ### **Editing**
+
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Auto-close brackets
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) - Smart commenting
 - [mini.surround](https://github.com/echasnovski/mini.surround) - Surround operations
 - [mini.ai](https://github.com/echasnovski/mini.ai) - Extended textobjects
 
 ### **UI & UX**
+
 - [noice.nvim](https://github.com/folke/noice.nvim) - Enhanced UI for messages/cmdline
 - [snacks.nvim](https://github.com/folke/snacks.nvim) - Collection of QoL features
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - Statusline
@@ -80,6 +89,7 @@ A modern, feature-rich Neovim configuration built with Lua, optimized for web de
 - [which-key.nvim](https://github.com/folke/which-key.nvim) - Keybinding popup
 
 ### **Utilities**
+
 - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) - Terminal integration
 - [mini.jump2d](https://github.com/echasnovski/mini.jump2d) - Quick navigation
 - [mini.bracketed](https://github.com/echasnovski/mini.bracketed) - Navigate with brackets
@@ -87,6 +97,7 @@ A modern, feature-rich Neovim configuration built with Lua, optimized for web de
 - [mini.trailspace](https://github.com/echasnovski/mini.trailspace) - Whitespace management
 
 ### **Database**
+
 - [vim-dadbod](https://github.com/tpope/vim-dadbod) - Database interface
 - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui) - Database UI
 - [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion) - SQL completion
@@ -119,9 +130,11 @@ nvim
 ### Post-Install
 
 1. **Install Language Servers**
+
    ```vim
    :Mason
    ```
+
    Install servers for your languages (ts_ls, eslint, pyright, etc.)
 
 2. **Install Formatters/Linters**
@@ -145,100 +158,110 @@ nvim
 Leader key: `<Space>`
 
 ### General
-| Key | Action |
-|-----|--------|
+
+| Key         | Action                           |
+| ----------- | -------------------------------- |
 | `<leader>?` | Show all keybindings (which-key) |
-| `<leader>w` | Save file |
-| `<leader>q` | Quit |
+| `<leader>w` | Save file                        |
+| `<leader>q` | Quit                             |
 
 ### File Navigation
-| Key | Action |
-|-----|--------|
-| `<leader>ff` | Find files |
-| `<leader>fg` | Live grep (search text) |
-| `<leader>fb` | Find buffers |
-| `<leader>fo` | Recent files |
-| `-` | Open oil.nvim (parent directory) |
-| `<leader>-` | Open oil.nvim (floating) |
-| `<leader>fm` | Open mini.files (current file dir) |
-| `<leader>fM` | Open mini.files (cwd) |
-| `<leader>fj` / `<leader>jf` | Built-in file explorer |
+
+| Key                         | Action                             |
+| --------------------------- | ---------------------------------- |
+| `<leader>ff`                | Find files                         |
+| `<leader>fg`                | Live grep (search text)            |
+| `<leader>fb`                | Find buffers                       |
+| `<leader>fo`                | Recent files                       |
+| `-`                         | Open oil.nvim (parent directory)   |
+| `<leader>-`                 | Open oil.nvim (floating)           |
+| `<leader>fm`                | Open mini.files (current file dir) |
+| `<leader>fM`                | Open mini.files (cwd)              |
+| `<leader>fj` / `<leader>jf` | Built-in file explorer             |
 
 ### Buffer Management
-| Key | Action |
-|-----|--------|
-| `<leader>bn` | Next buffer |
+
+| Key          | Action          |
+| ------------ | --------------- |
+| `<leader>bn` | Next buffer     |
 | `<leader>bp` | Previous buffer |
-| `<leader>bd` | Delete buffer |
+| `<leader>bd` | Delete buffer   |
 
 ### Window Navigation
-| Key | Action |
-|-----|--------|
-| `<C-h>` | Move to left window |
-| `<C-l>` | Move to right window |
+
+| Key     | Action                |
+| ------- | --------------------- |
+| `<C-h>` | Move to left window   |
+| `<C-l>` | Move to right window  |
 | `<C-j>` | Move to bottom window |
-| `<C-k>` | Move to top window |
+| `<C-k>` | Move to top window    |
 
 ### Git
-| Key | Action |
-|-----|--------|
-| `]c` / `[c` | Next/previous hunk |
-| `<leader>hs` | Stage hunk |
-| `<leader>hr` | Reset hunk |
-| `<leader>hp` | Preview hunk |
-| `<leader>hb` | Blame line |
-| `<leader>tb` | Toggle line blame |
-| `<leader>gg` | Open lazygit |
+
+| Key          | Action                      |
+| ------------ | --------------------------- |
+| `]c` / `[c`  | Next/previous hunk          |
+| `<leader>hs` | Stage hunk                  |
+| `<leader>hr` | Reset hunk                  |
+| `<leader>hp` | Preview hunk                |
+| `<leader>hb` | Blame line                  |
+| `<leader>tb` | Toggle line blame           |
+| `<leader>gg` | Open lazygit                |
 | `<leader>gb` | Git browse (open in GitHub) |
-| `<leader>gB` | Git blame line (inline) |
+| `<leader>gB` | Git blame line (inline)     |
 
 ### LSP
-| Key | Action |
-|-----|--------|
-| `gd` | Go to definition |
-| `gr` | Go to references |
-| `K` | Hover documentation |
-| `<leader>rn` | Rename |
-| `<leader>ca` | Code action |
-| `<leader>cf` | Format buffer |
-| `<leader>cl` | Trigger linting |
+
+| Key          | Action              |
+| ------------ | ------------------- |
+| `gd`         | Go to definition    |
+| `gr`         | Go to references    |
+| `K`          | Hover documentation |
+| `<leader>rn` | Rename              |
+| `<leader>ca` | Code action         |
+| `<leader>cf` | Format buffer       |
+| `<leader>cl` | Trigger linting     |
 
 ### Diagnostics & Navigation
-| Key | Action |
-|-----|--------|
-| `<leader>xx` | Toggle diagnostics (Trouble) |
-| `<leader>xX` | Buffer diagnostics (Trouble) |
-| `<leader>a` | Toggle aerial (symbols) |
-| `[a` / `]a` | Previous/next symbol |
-| `[d` / `]d` | Previous/next diagnostic (mini.bracketed) |
-| `[b` / `]b` | Previous/next buffer (mini.bracketed) |
+
+| Key          | Action                                    |
+| ------------ | ----------------------------------------- |
+| `<leader>xx` | Toggle diagnostics (Trouble)              |
+| `<leader>xX` | Buffer diagnostics (Trouble)              |
+| `<leader>a`  | Toggle aerial (symbols)                   |
+| `[a` / `]a`  | Previous/next symbol                      |
+| `[d` / `]d`  | Previous/next diagnostic (mini.bracketed) |
+| `[b` / `]b`  | Previous/next buffer (mini.bracketed)     |
 
 ### Editing
-| Key | Action |
-|-----|--------|
-| `gcc` | Toggle comment (line) |
-| `gc` (visual) | Toggle comment (selection) |
-| `sa{motion}` | Add surrounding |
-| `sd{char}` | Delete surrounding |
-| `sr{old}{new}` | Replace surrounding |
+
+| Key                | Action                              |
+| ------------------ | ----------------------------------- |
+| `gcc`              | Toggle comment (line)               |
+| `gc` (visual)      | Toggle comment (selection)          |
+| `sa{motion}`       | Add surrounding                     |
+| `sd{char}`         | Delete surrounding                  |
+| `sr{old}{new}`     | Replace surrounding                 |
 | `<` / `>` (visual) | Indent left/right (keeps selection) |
 
 ### Utilities
-| Key | Action |
-|-----|--------|
-| `<C-\>` | Toggle terminal (toggleterm) |
-| `<C-/>` | Toggle terminal (snacks) |
-| `<leader>z` | Toggle zen mode |
-| `<leader>Z` | Toggle zoom |
-| `<leader>.` | Toggle scratch buffer |
-| `<leader>N` | Notification history |
-| `<CR>` | Start jump2d navigation |
+
+| Key         | Action                       |
+| ----------- | ---------------------------- |
+| `<C-\>`     | Toggle terminal (toggleterm) |
+| `<C-/>`     | Toggle terminal (snacks)     |
+| `<leader>z` | Toggle zen mode              |
+| `<leader>Z` | Toggle zoom                  |
+| `<leader>.` | Toggle scratch buffer        |
+| `<leader>N` | Notification history         |
+| `<CR>`      | Start jump2d navigation      |
 
 ### Database
-| Key | Action |
-|-----|--------|
-| `<leader>db` | Open Database UI |
-| `<leader>dt` | Toggle Database UI |
+
+| Key          | Action               |
+| ------------ | -------------------- |
+| `<leader>db` | Open Database UI     |
+| `<leader>dt` | Toggle Database UI   |
 | `<leader>df` | Find Database Buffer |
 
 ---
@@ -321,12 +344,14 @@ Many features can be toggled via snacks.nvim's toggle system or which-key.
 This configuration was comprehensively upgraded by Claude (Anthropic's AI assistant) on October 1, 2024. The modernization process included:
 
 ### Phase 1: Critical Updates
+
 - ✅ Replaced `vim-polyglot` with modern `nvim-treesitter`
 - ✅ Fixed duplicate keybindings and lazy loading conflicts
 - ✅ Added `gitsigns.nvim` for essential git integration
 - ✅ Integrated `oil.nvim` for vim-native file exploration
 
 ### Phase 2: Enhanced Development Tools
+
 - ✅ Added `conform.nvim` for code formatting (replacing null-ls)
 - ✅ Added `nvim-lint` for asynchronous linting
 - ✅ Integrated `trouble.nvim` for beautiful diagnostics
@@ -334,13 +359,16 @@ This configuration was comprehensively upgraded by Claude (Anthropic's AI assist
 - ✅ Implemented `which-key.nvim` for keybinding discoverability
 
 ### Phase 3: Snacks.nvim Feature Expansion
+
 Expanded from 5 to 15+ snacks.nvim features:
+
 - ✅ Performance: `bigfile`, `bufdelete`, `quickfile`
 - ✅ Visual: `indent`, `scroll`, `animate`, `statuscolumn`, `dim`, `zen`
 - ✅ Git: `lazygit`, `gitbrowse`
 - ✅ Utilities: `terminal`, `toggle`, `scope`, `scratch`
 
 ### Phase 4: Mini.nvim Ecosystem
+
 - ✅ Added `mini.surround` for surrounding operations
 - ✅ Added `mini.ai` for powerful textobjects
 - ✅ Added `mini.files` as alternative file manager
@@ -350,7 +378,9 @@ Expanded from 5 to 15+ snacks.nvim features:
 - ✅ Added `mini.trailspace` for whitespace management
 
 ### Methodology
+
 The AI assistant:
+
 1. Analyzed the existing configuration structure
 2. Researched current Neovim best practices (2024-2025)
 3. Identified gaps and deprecated patterns
@@ -365,22 +395,27 @@ All changes follow modern Neovim conventions and are fully tested.
 ## 🐛 Troubleshooting
 
 ### Plugins not installing?
+
 ```vim
 :Lazy sync
 ```
 
 ### LSP not working?
+
 1. Check server is installed: `:Mason`
 2. Check LSP status: `:LspInfo`
 3. Restart LSP: `:LspRestart`
 
 ### Tree-sitter errors?
+
 ```vim
 :TSUpdate
 ```
 
 ### Format not working?
+
 Ensure formatters are installed:
+
 ```vim
 :ConformInfo
 ```
@@ -411,3 +446,5 @@ MIT License - See LICENSE file for details
 ---
 
 **Enjoy your modern Neovim setup!** 🚀
+
+# testing nvimbackup funchtion
