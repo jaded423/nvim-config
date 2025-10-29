@@ -4,6 +4,13 @@
 -- Set leader key early
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.api.nvim_create_autocmd("BufNewFile", {
+	pattern = "*.lua",
+	callback = function()
+		vim.opt.fileformat = "unix"
+	end,
+	desc = "Set new .lua files to use LF line endings",
+})
 
 -- Load core configuration modules
 require("config.options")
