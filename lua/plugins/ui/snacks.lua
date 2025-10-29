@@ -67,8 +67,8 @@ return {
 							.. "/lua/plugins/snek.png -C -c -W 55",
 						random = 10,
 						pane = 2,
-						indent = 4,
-						height = 30,
+						indent = 2,
+						height = 40,
 					},
 				},
 				preset = {
