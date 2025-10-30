@@ -23,6 +23,11 @@ require("lazy").setup({
 		{ import = "plugins.git" },
 		{ import = "plugins.navigation" },
 		{ import = "plugins.coding" },
+		{ import = "plugins.debug" },
+		{ import = "plugins.testing" },
+		{ import = "plugins.ai" },
+		{ import = "plugins.session" },
+		{ import = "plugins.tools" },
 	},
 	change_detection = {
 		notify = false,
