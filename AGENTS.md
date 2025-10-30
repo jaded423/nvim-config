@@ -160,6 +160,7 @@ Plugins are organized by category in `lua/plugins/`:
 
 - **ai/** - AI assistance (NEW)
   - `copilot.lua` - GitHub Copilot + CopilotChat for code generation and explanations
+  - `avante.lua` - Next-gen AI assistant
 
 - **coding/** - Language-specific features
   - `syntax.lua` - Tree-sitter configuration
@@ -170,6 +171,7 @@ Plugins are organized by category in `lua/plugins/`:
 
 - **debug/** - Debugging tools (NEW)
   - `nvim-dap.lua` - Complete DAP debugging suite (dap, dap-ui, virtual-text, mason-dap)
+  - `perfanno.lua` - Performance profiling
 
 - **editor/** - Editing utilities
   - `editor.lua` - Autopairs, comments, oil.nvim file explorer
@@ -179,6 +181,8 @@ Plugins are organized by category in `lua/plugins/`:
 - **git/** - Git integration
   - `git.lua` - gitsigns.nvim for hunks and inline blame
   - `diffview.lua` - Superior diff viewer with 3-way merge conflict resolution (NEW)
+  - `neogit.lua` - Magit-like Git interface
+  - `lazygit.nvim` - LazyGit TUI integration
 
 - **lsp/** - Language server configuration
   - `lsp.lua` - LSP servers via mason.nvim (uses `vim.lsp.config` API)
@@ -198,6 +202,8 @@ Plugins are organized by category in `lua/plugins/`:
 
 - **tools/** - Utility tools (NEW)
   - `kulala.lua` - REST client for testing APIs with .http files
+  - `dadbod-ui.lua` - UI for vim-dadbod
+  - `obsidian.lua` - Obsidian vault integration
 
 - **ui/** - User interface enhancements
   - `snacks.lua` - Multi-feature plugin (dashboard, notifications, terminal, zen mode)
@@ -633,14 +639,15 @@ Install debuggers for your languages via `:Mason`:
 
 ### October 2025: Professional Development Tools Expansion
 
-Added 11 enterprise-grade plugins after comprehensive research of 2024-2025 Neovim ecosystem:
+Added 15 enterprise-grade plugins after comprehensive research of 2024-2025 Neovim ecosystem:
 
 **New Plugin Categories:**
-- `ai/` - GitHub Copilot integration (copilot.lua + CopilotChat.nvim)
-- `debug/` - Full DAP debugging suite (nvim-dap + UI + virtual text)
+- `ai/` - GitHub Copilot integration (copilot.lua + CopilotChat.nvim), Avante.nvim (next-gen AI assistant)
+- `debug/` - Full DAP debugging suite (nvim-dap + UI + virtual text), perfanno.nvim (performance profiling)
 - `testing/` - Unified test runner (neotest with Jest/Vitest/Python/Go adapters)
 - `session/` - Automatic session management (persistence.nvim)
-- `tools/` - REST client and Markdown preview (kulala.nvim + peek.nvim)
+- `tools/` - REST client and Markdown preview (kulala.nvim + peek.nvim), vim-dadbod-ui (UI for vim-dadbod), obsidian.nvim (Obsidian vault integration)
+- `git/` - Neogit (Magit-like Git interface), lazygit.nvim (LazyGit TUI integration)
 
 **Enhanced Existing Categories:**
 - `coding/` - Added todo-comments, refactoring.nvim, peek.nvim
