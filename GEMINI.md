@@ -635,51 +635,6 @@ Install debuggers for your languages via `:Mason`:
 3. Test config: `:checkhealth`
 4. Commit lock file: `git add lazy-lock.json && git commit -m "chore: Update plugins"`
 
-## Major Updates
-
-### October 2025: Professional Development Tools Expansion
-
-Added 15 enterprise-grade plugins after comprehensive research of 2024-2025 Neovim ecosystem:
-
-**New Plugin Categories:**
-- `ai/` - GitHub Copilot integration (copilot.lua + CopilotChat.nvim), Avante.nvim (next-gen AI assistant)
-- `debug/` - Full DAP debugging suite (nvim-dap + UI + virtual text), perfanno.nvim (performance profiling)
-- `testing/` - Unified test runner (neotest with Jest/Vitest/Python/Go adapters)
-- `session/` - Automatic session management (persistence.nvim)
-- `tools/` - REST client and Markdown preview (kulala.nvim + peek.nvim), vim-dadbod-ui (UI for vim-dadbod), obsidian.nvim (Obsidian vault integration)
-- `git/` - Neogit (Magit-like Git interface), lazygit.nvim (LazyGit TUI integration)
-
-**Enhanced Existing Categories:**
-- `coding/` - Added todo-comments, refactoring.nvim, peek.nvim
-- `git/` - Added diffview.nvim for superior diff viewing
-- `lsp/` - Added typescript-tools.nvim for enhanced TS/JS experience
-- `editor/` - Added smart-splits.nvim for tmux integration
-
-**Why These Plugins:**
-1. **Active Maintenance** - All actively maintained in 2024-2025
-2. **Community Validated** - 1000+ stars or significant buzz
-3. **Best-in-Class** - Industry-leading in their categories
-4. **Non-Redundant** - Fill gaps without duplication
-5. **Modern APIs** - Use Neovim 0.10+ features
-
-**Architectural Changes:**
-- Upgraded from nvim-cmp to blink.cmp (better performance)
-- Reorganized from 7 to 12 plugin categories
-- All new plugins use lazy loading for optimal startup time
-- Comprehensive keybinding documentation for discoverability
-
-**Impact:**
-- Professional debugging capabilities (breakpoints, variable inspection, step-through)
-- Integrated testing with real-time feedback
-- AI-assisted coding with GitHub Copilot
-- Advanced refactoring operations
-- Complete git workflow (hunks → diffs → merge conflicts)
-- API testing without leaving editor
-- Live markdown preview with GitHub styling
-- Seamless tmux integration
-
-For full details, see README.md Phase 5 documentation.
-
 ## Resources
 
 - [Lazy.nvim Docs](https://github.com/folke/lazy.nvim)
