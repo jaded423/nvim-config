@@ -80,3 +80,26 @@ end, { desc = "Delete Buffer (snacks)" })
 keymap("n", "<leader>N", function()
 	Snacks.notifier.show_history()
 end, { desc = "Notification History" })
+
+-- Obsidian custom helper functions (floating windows)
+local obsidian_helpers = require("config.obsidian-helpers")
+
+keymap("n", "<leader>oN", function()
+	obsidian_helpers.quick_note()
+end, { desc = "Obsidian: Quick note (floating)" })
+
+keymap("n", "<leader>oD", function()
+	obsidian_helpers.daily_note_floating()
+end, { desc = "Obsidian: Daily note (floating)" })
+
+keymap("n", "<leader>om", function()
+	obsidian_helpers.meeting_note()
+end, { desc = "Obsidian: Meeting note" })
+
+keymap("n", "<leader>op", function()
+	obsidian_helpers.person_note()
+end, { desc = "Obsidian: Person/contact note" })
+
+keymap("n", "<leader>oP", function()
+	obsidian_helpers.project_note()
+end, { desc = "Obsidian: Project note" })

@@ -644,3 +644,49 @@ Install debuggers for your languages via `:Mason`:
 - [nvim-dap Docs](https://github.com/mfussenegger/nvim-dap)
 - [neotest Docs](https://github.com/nvim-neotest/neotest)
 - [GitHub Copilot](https://github.com/features/copilot)
+
+## Changelog
+
+### November 1, 2025 - Obsidian Integration Improvements
+
+**Fixed Obsidian Template Issues**
+- Fixed malformed frontmatter in templates (lua/config/obsidian-helpers.lua:52-57)
+  - Templates were creating duplicate headings and frontmatter not at file top
+  - Now clears buffer before template insertion for clean frontmatter structure
+  - Result: Frontmatter now properly positioned at line 1 for Obsidian compatibility
+
+**Fixed Markdown Rendering**
+- Fixed render-markdown.nvim not auto-enabling on file reopen (lua/plugins/coding/render-markdown.lua:7-38)
+  - Added explicit `enabled = true` configuration
+  - Added FileType autocmd to call `.enable()` for all markdown files
+  - Added insert mode to `render_modes` for live rendering while typing
+  - Added `<leader>mr` keybinding to manually toggle rendering
+  - Result: Beautiful markdown rendering now consistent across new and reopened files
+
+**Fixed Auto-Organization**
+- Fixed note auto-organization on save (lua/config/obsidian-helpers.lua:72-173)
+  - Improved frontmatter parser to handle multiple frontmatter blocks
+  - Better error handling and user notifications
+  - Now correctly detects `type:` field and moves notes to appropriate folders:
+    - `type: person` → `02-contacts/`
+    - `type: meeting` → `03-meetings/`
+    - `type: project` → `01-projects/`
+
+**Obsidian Vault Setup**
+- Configured `conceallevel = 2` for markdown files (lua/config/autocmds.lua:10)
+  - Enables Obsidian syntax features (custom checkboxes, concealed elements)
+- Disabled auto-generated frontmatter (lua/plugins/tools/obsidian.lua:124-126)
+  - Prevents duplicate frontmatter when using templates
+  - Templates now provide complete frontmatter
+
+**New Keybindings**
+- `<leader>onm` - Create meeting note with template (auto-saves to 03-meetings/)
+- `<leader>onp` - Create person/contact note (auto-saves to 02-contacts/)
+- `<leader>onP` - Create project note (auto-saves to 01-projects/)
+- `<leader>mr` - Toggle markdown rendering on/off
+
+**Related Documentation**
+- Created comprehensive backup guide in vault: `03-resources/obsidian/github-auto-backup-guide.md`
+- Documents hourly auto-backup system, troubleshooting, and best practices
+
+**Impact:** Obsidian integration now works seamlessly with proper template formatting, automatic file organization, and beautiful markdown rendering that persists across sessions.
