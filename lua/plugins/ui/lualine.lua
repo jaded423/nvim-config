@@ -5,12 +5,27 @@ return {
 	config = function()
 		-- Custom component - shows parent/current directory
 		local function cwd()
-			local bufpath = vim.fn.expand("%:p:h")
-			if bufpath == "" then
-				return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+			local bufpath = vim.fn.expand("%:p")  -- Changed from %:p:h to %:p
+
+			-- If no file/buffer open, use current working directory
+			if bufpath == "" or bufpath == "." then
+				local dir = vim.fn.getcwd()
+				local current = vim.fn.fnamemodify(dir, ":t")
+				local parent = vim.fn.fnamemodify(dir, ":h:t")
+				return " " .. parent .. "/" .. current
 			end
-			local current = vim.fn.fnamemodify(bufpath, ":t")
-			local parent = vim.fn.fnamemodify(bufpath, ":h:t")
+
+			-- Check if this is a directory (netrw buffer)
+			if vim.fn.isdirectory(bufpath) == 1 then
+				local current = vim.fn.fnamemodify(bufpath, ":t")
+				local parent = vim.fn.fnamemodify(bufpath, ":h:t")
+				return " " .. parent .. "/" .. current
+			end
+
+			-- Regular file - show parent/current directory of the file
+			local dir = vim.fn.fnamemodify(bufpath, ":h")
+			local current = vim.fn.fnamemodify(dir, ":t")
+			local parent = vim.fn.fnamemodify(dir, ":h:t")
 			return " " .. parent .. "/" .. current
 		end
 

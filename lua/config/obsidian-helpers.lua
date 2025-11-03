@@ -169,6 +169,27 @@ function M.auto_organize_note()
   if success == 0 then
     -- Update the buffer to point to the new location
     vim.cmd("edit! " .. vim.fn.fnameescape(new_path))
+
+    -- Ensure rendering is re-enabled after file move
+    -- Use longer delay to ensure buffer is fully loaded and filetype is detected
+    vim.defer_fn(function()
+      -- Let Neovim detect filetype naturally from .md extension
+      if vim.bo.filetype ~= "markdown" then
+        vim.bo.filetype = "markdown"
+      end
+
+      -- Trigger all markdown FileType autocmds (conceallevel, wrapping, etc.)
+      vim.cmd("doautocmd FileType markdown")
+
+      -- Wait a tiny bit more, then explicitly enable render-markdown
+      vim.defer_fn(function()
+        local ok, render_markdown = pcall(require, "render-markdown")
+        if ok then
+          render_markdown.enable()
+        end
+      end, 50)
+    end, 150)
+
     vim.notify(string.format("📁 Moved to %s/", target_folder), vim.log.levels.INFO)
   else
     vim.notify("Failed to move note", vim.log.levels.ERROR)
