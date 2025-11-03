@@ -646,7 +646,44 @@ Install debuggers for your languages via `:Mason`:
 - [neotest Docs](https://github.com/nvim-neotest/neotest)
 - [GitHub Copilot](https://github.com/features/copilot)
 
+## Automated Backups ✅
+
+This repository is automatically backed up **every hour** as part of a unified dotfiles backup system.
+
+**What's backed up:**
+- This nvim-config repository
+- Obsidian Vault
+- ZSH Config (dotfiles-private)
+
+**How to check:**
+```bash
+# View recent backup logs
+tail -f /tmp/dotfiles_backup.log
+
+# Manual backup test
+bash ~/scripts/dotfiles_backup.sh
+
+# Check LaunchAgent status
+launchctl list | grep dotfiles
+```
+
+You'll receive an email notification after each hourly backup showing the status of all three repositories.
+
 ## Changelog
+
+### November 3, 2025 - Added to Unified Automated Backup System
+
+**Change**: nvim-config added to hourly automated backup alongside Obsidian vault and ZSH config.
+
+**Benefits:**
+- ✅ Automatic hourly backups to GitHub
+- ✅ Consolidated email notifications for all dotfiles
+- ✅ No manual intervention needed
+- ✅ Robust retry logic for git operations
+
+**Script**: `~/scripts/dotfiles_backup.sh`
+
+---
 
 ### November 3, 2025 - Converted Obsidian Vault to camelCase Naming
 
