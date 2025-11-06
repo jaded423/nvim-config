@@ -284,6 +284,8 @@ For global keybindings, edit `lua/config/keymaps.lua`.
 
 For plugin-specific keybindings, find the plugin's config file and modify the `keys` table or `config` function.
 
+**Custom utility**: `<leader>dp` - Replace buffer with clipboard, dedent one level, and copy back (useful for scratch pads with leading-space code)
+
 ## Important Implementation Details
 
 ### Completion Engine
