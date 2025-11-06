@@ -660,13 +660,13 @@ This repository is automatically backed up **every hour** as part of a unified d
 **How to check:**
 ```bash
 # View recent backup logs
-tail -f /tmp/dotfiles_backup.log
+tail -f /tmp/git_backup.log
 
 # Manual backup test
-bash ~/scripts/dotfiles_backup.sh
+bash ~/scripts/gitBackup.sh
 
 # Check LaunchAgent status
-launchctl list | grep dotfiles
+launchctl list | grep gitbackup
 ```
 
 You'll receive an email notification after each hourly backup showing the status of all three repositories.
@@ -683,7 +683,7 @@ You'll receive an email notification after each hourly backup showing the status
 - ✅ No manual intervention needed
 - ✅ Robust retry logic for git operations
 
-**Script**: `~/scripts/dotfiles_backup.sh`
+**Script**: `~/scripts/gitBackup.sh`
 
 ---
 
